@@ -1,10 +1,11 @@
 import express from "express";
 import userRouter from "./routes/userRouter.js";
 import enemyRouter from "./routes/enemyRouter.js";
+import helmet from "helmet";
 
 const app = express();
 const port = process.env.PORT;
-
+app.use(helmet());
 app.use(express.json());
 
 const globalTraitement = (req, res, next) => {
